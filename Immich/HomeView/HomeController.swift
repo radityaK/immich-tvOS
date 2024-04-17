@@ -15,7 +15,7 @@ class HomeController: UIViewController {
     
     lazy var layout: UICollectionViewFlowLayout = { [unowned self] in
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 200, height: 200)
+        layout.itemSize = CGSize(width: 300, height: 300)
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         layout.minimumLineSpacing = 5
@@ -52,6 +52,10 @@ extension HomeController: UICollectionViewDelegate {
         guard let asset = self.viewModel.getAsset(at: indexPath.row) else { return cell }
         cell.setupCell(asset: asset)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        <#code#>
     }
 }
 

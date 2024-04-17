@@ -45,6 +45,10 @@
 		E0A32A202BCF7B5A00A1D08E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A1F2BCF7B5A00A1D08E /* Environment.swift */; };
 		E0A32A222BCF7C6600A1D08E /* ParamConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A212BCF7C6600A1D08E /* ParamConvertible.swift */; };
 		E0A32A262BCFAA8200A1D08E /* SDWebImageWebPCoder in Frameworks */ = {isa = PBXBuildFile; productRef = E0A32A252BCFAA8200A1D08E /* SDWebImageWebPCoder */; };
+		E0A32A292BCFB1A900A1D08E /* Pageboy in Frameworks */ = {isa = PBXBuildFile; productRef = E0A32A282BCFB1A900A1D08E /* Pageboy */; };
+		E0A32A2B2BCFB1DC00A1D08E /* AssetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A2A2BCFB1DC00A1D08E /* AssetPageViewController.swift */; };
+		E0A32A302BCFB34500A1D08E /* AssetViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A2E2BCFB34500A1D08E /* AssetViewerViewController.swift */; };
+		E0A32A312BCFB34500A1D08E /* AssetViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A32A2F2BCFB34500A1D08E /* AssetViewerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +78,9 @@
 		E0A32A1D2BCF7B3400A1D08E /* Router+TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+TargetType.swift"; sourceTree = "<group>"; };
 		E0A32A1F2BCF7B5A00A1D08E /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E0A32A212BCF7C6600A1D08E /* ParamConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamConvertible.swift; sourceTree = "<group>"; };
+		E0A32A2A2BCFB1DC00A1D08E /* AssetPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetPageViewController.swift; sourceTree = "<group>"; };
+		E0A32A2E2BCFB34500A1D08E /* AssetViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewerViewController.swift; sourceTree = "<group>"; };
+		E0A32A2F2BCFB34500A1D08E /* AssetViewerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetViewerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,7 @@
 				E009B10E2BCE6EFC00CB1E72 /* RxMoya in Frameworks */,
 				E009B0F32BCE6B5600CB1E72 /* Alamofire in Frameworks */,
 				E0A32A262BCFAA8200A1D08E /* SDWebImageWebPCoder in Frameworks */,
+				E0A32A292BCFB1A900A1D08E /* Pageboy in Frameworks */,
 				E009B0F52BCE6B5600CB1E72 /* AlamofireDynamic in Frameworks */,
 				E009B10A2BCE6EFC00CB1E72 /* Moya in Frameworks */,
 				E009B1172BCE7B9800CB1E72 /* SwiftyJSON in Frameworks */,
@@ -176,12 +184,14 @@
 				E009B13C2BCE7F2700CB1E72 /* DataLayer */,
 				E0A32A232BCF839C00A1D08E /* Cell */,
 				E0408C882BCE39E60086D1C6 /* AppDelegate.swift */,
-				E0408C8A2BCE39E60086D1C6 /* HomeController.swift */,
-				E009B1112BCE773200CB1E72 /* HomeViewModel.swift */,
+				E0A32A272BCFB03800A1D08E /* HomeView */,
 				E0408C8C2BCE39E60086D1C6 /* Main.storyboard */,
 				E0408C8F2BCE39E80086D1C6 /* Assets.xcassets */,
 				E0408C912BCE39E80086D1C6 /* LaunchScreen.storyboard */,
 				E0408CA32BCE3DF70086D1C6 /* SettingsViewController.swift */,
+				E0A32A2A2BCFB1DC00A1D08E /* AssetPageViewController.swift */,
+				E0A32A2E2BCFB34500A1D08E /* AssetViewerViewController.swift */,
+				E0A32A2F2BCFB34500A1D08E /* AssetViewerViewController.xib */,
 			);
 			path = Immich;
 			sourceTree = "<group>";
@@ -193,6 +203,15 @@
 				E009B0EE2BCE5CFA00CB1E72 /* CollectionViewAssetCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E0A32A272BCFB03800A1D08E /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				E0408C8A2BCE39E60086D1C6 /* HomeController.swift */,
+				E009B1112BCE773200CB1E72 /* HomeViewModel.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +243,7 @@
 				E009B10D2BCE6EFC00CB1E72 /* RxMoya */,
 				E009B1162BCE7B9800CB1E72 /* SwiftyJSON */,
 				E0A32A252BCFAA8200A1D08E /* SDWebImageWebPCoder */,
+				E0A32A282BCFB1A900A1D08E /* Pageboy */,
 			);
 			productName = Immich;
 			productReference = E0408C852BCE39E60086D1C6 /* Immich.app */;
@@ -278,6 +298,7 @@
 			files = (
 				E009B13F2BCE7F6800CB1E72 /* Preference.swift in Resources */,
 				E009B1382BCE7EF100CB1E72 /* ApiResponse.swift in Resources */,
+				E0A32A312BCFB34500A1D08E /* AssetViewerViewController.xib in Resources */,
 				E0408C932BCE39E80086D1C6 /* LaunchScreen.storyboard in Resources */,
 				E0408C902BCE39E80086D1C6 /* Assets.xcassets in Resources */,
 				E0408C8E2BCE39E60086D1C6 /* Main.storyboard in Resources */,
@@ -292,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A32A2B2BCFB1DC00A1D08E /* AssetPageViewController.swift in Sources */,
 				E0A32A1A2BCF79DB00A1D08E /* ApiNetworkable.swift in Sources */,
 				E009B1562BCE81D800CB1E72 /* ApiResponse.swift in Sources */,
 				E009B1142BCE7B6600CB1E72 /* Asset.swift in Sources */,
@@ -302,6 +324,7 @@
 				E009B14B2BCE7F8700CB1E72 /* CellRefreshable.swift in Sources */,
 				E0A32A202BCF7B5A00A1D08E /* Environment.swift in Sources */,
 				E009B1582BCE821900CB1E72 /* Metadata.swift in Sources */,
+				E0A32A302BCFB34500A1D08E /* AssetViewerViewController.swift in Sources */,
 				E009B14A2BCE7F8700CB1E72 /* ManagedObjectConvertible.swift in Sources */,
 				E0408C892BCE39E60086D1C6 /* AppDelegate.swift in Sources */,
 				E009B1122BCE773200CB1E72 /* HomeViewModel.swift in Sources */,
@@ -648,6 +671,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E0A32A242BCFAA8100A1D08E /* XCRemoteSwiftPackageReference "SDWebImageWebPCoder" */;
 			productName = SDWebImageWebPCoder;
+		};
+		E0A32A282BCFB1A900A1D08E /* Pageboy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0408C9E2BCE3C5D0086D1C6 /* XCRemoteSwiftPackageReference "Pageboy" */;
+			productName = Pageboy;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

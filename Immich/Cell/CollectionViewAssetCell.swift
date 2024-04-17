@@ -27,9 +27,11 @@ class CollectionViewAssetCell: UICollectionViewCell, Reusable {
     
         let urlAsset = "https://photos.gardenia-cloud.my.id/api/asset/thumbnail/\(asset.id)"
         self.assetImageView.sd_setImage(with: URL(string: urlAsset), placeholderImage: UIImage(named: "placeholder"), context: [:])
-        self.assetImageView.sd_setImage(with: URL(string: urlAsset), placeholderImage: UIImage(named: "placeholder")) { image, error, cacheType, url in
-            print("urlAsset error \(error)")
-        }
-//        print("urlAsset \(urlAsset)")
+    }
+}
+
+extension CollectionViewAssetCell {
+    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        self.assetImageView.adjustsImageWhenAncestorFocused = self.isFocused
     }
 }
