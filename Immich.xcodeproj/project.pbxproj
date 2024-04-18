@@ -190,8 +190,7 @@
 				E0408C912BCE39E80086D1C6 /* LaunchScreen.storyboard */,
 				E0408CA32BCE3DF70086D1C6 /* SettingsViewController.swift */,
 				E0A32A2A2BCFB1DC00A1D08E /* AssetPageViewController.swift */,
-				E0A32A2E2BCFB34500A1D08E /* AssetViewerViewController.swift */,
-				E0A32A2F2BCFB34500A1D08E /* AssetViewerViewController.xib */,
+				E0A32A322BCFB5AF00A1D08E /* AssetDetailView */,
 			);
 			path = Immich;
 			sourceTree = "<group>";
@@ -212,6 +211,15 @@
 				E009B1112BCE773200CB1E72 /* HomeViewModel.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		E0A32A322BCFB5AF00A1D08E /* AssetDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				E0A32A2E2BCFB34500A1D08E /* AssetViewerViewController.swift */,
+				E0A32A2F2BCFB34500A1D08E /* AssetViewerViewController.xib */,
+			);
+			path = AssetDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

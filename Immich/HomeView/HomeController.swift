@@ -55,7 +55,12 @@ extension HomeController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        <#code#>
+        guard let collection = self.viewModel.assetCollection else { return }
+        let pageController = AssetPageViewController()
+        pageController.assetCollection = collection
+        pageController.totalPage = collection.count
+        pageController.selectedPageIndex = indexPath.row
+        self.navigationController?.pushViewController(pageController, animated: true)
     }
 }
 
