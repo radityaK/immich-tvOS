@@ -27,8 +27,21 @@ extension Router: TargetType {
      Base url defined by `environementUrl`.
      */
     var baseURL: URL {
-        guard let url = URL(string: environmentUrl) else { fatalError("Could not create environmentBaseUrl.") }
-        return url
+        switch self {
+        case .login(let provider):
+            guard let serverURL = provider.parameters["server"] as? String, let url = URL(string: serverURL) else {
+                return URL(string: "about:blank")!
+            }
+            UserDefaults.standard.set(serverURL,forKey: "immich_base_url")
+            return url
+        case .allAsset:
+            guard let serverURL = UserData.getActiveUser()?.server as? String,
+                    let url = URL(string: serverURL) else {
+                return URL(string: "about:blank")!
+            }
+            return url
+        }
+        return URL(string: "about:blank")!
     }
     
     /**
@@ -36,7 +49,8 @@ extension Router: TargetType {
      */
     var path: String {
         switch self {
-        case .allAsset: return "asset"
+        case .allAsset: return "/assets/\(UserData.getActiveUser()!.userId)/thumbnail"
+        case .login: return "/auth/login"
         }
     }
     
@@ -45,6 +59,8 @@ extension Router: TargetType {
      */
     var method: Moya.Method {
         switch self {
+        case .login:
+            return .post
         default:
             return .get
         }
@@ -74,7 +90,10 @@ extension Router: TargetType {
     var headers: [String : String]? {
         switch self {
         case .allAsset:
-            return ["x-api-key": "JjlipfdvMPAy3DBNTFibqYwYLNStxMV1iklIbhX5E"]
+            return [
+                //"Authorization": "Bearer \(UserData.getActiveUser()?.accessToken ?? "")",
+                "Accept": "application/octet-stream"
+            ]
         default:
             return ["User-Agent": userAgent, "Authorization":auth]
         }
@@ -102,12 +121,14 @@ extension Router: TargetType {
     var encoding: ParameterEncoding {
         switch self {
         // encoding for HTTP Post Method
-//        case .stockDetail, .login, .reportOpenPush, .registerPush: return URLEncoding.default
+        case .login
+            : return URLEncoding.default
         // encoding for HTTP Delete Method with body param
 //        case .unregisterPush,.getRekomendasiBoxBD,.getRekomendasiIndex,.getRekomendasiDetail:
 //            return URLEncoding.httpBody
         // encoding for HTTP Get Method
-        default: return URLEncoding.queryString
+        default:
+            return URLEncoding.queryString
         }
     }
     
@@ -116,8 +137,11 @@ extension Router: TargetType {
      */
     var param: [String: Any] {
         switch self {
-        case .allAsset(let provider):
+        case .login(provider: let provider):
             return provider.parameters
+        case .allAsset(let provider):
+//            return provider.parameters
+            return [:]
         }
     }
 }

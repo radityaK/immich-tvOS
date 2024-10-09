@@ -10,8 +10,6 @@
 		E009B0E32BCE5B6500CB1E72 /* RWExtensionPack in Frameworks */ = {isa = PBXBuildFile; productRef = E009B0E22BCE5B6500CB1E72 /* RWExtensionPack */; };
 		E009B0EF2BCE5CFA00CB1E72 /* CollectionViewAssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E009B0ED2BCE5CFA00CB1E72 /* CollectionViewAssetCell.swift */; };
 		E009B0F02BCE5CFA00CB1E72 /* CollectionViewAssetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E009B0EE2BCE5CFA00CB1E72 /* CollectionViewAssetCell.xib */; };
-		E009B0F32BCE6B5600CB1E72 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E009B0F22BCE6B5600CB1E72 /* Alamofire */; };
-		E009B0F52BCE6B5600CB1E72 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E009B0F42BCE6B5600CB1E72 /* AlamofireDynamic */; };
 		E009B1082BCE6EFC00CB1E72 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E009B1072BCE6EFC00CB1E72 /* CombineMoya */; };
 		E009B10A2BCE6EFC00CB1E72 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = E009B1092BCE6EFC00CB1E72 /* Moya */; };
 		E009B10C2BCE6EFC00CB1E72 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = E009B10B2BCE6EFC00CB1E72 /* ReactiveMoya */; };
@@ -39,6 +37,8 @@
 		E0408C9D2BCE3A5C0086D1C6 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0408C9C2BCE3A5C0086D1C6 /* SDWebImageMapKit */; };
 		E0408CA02BCE3C5D0086D1C6 /* Pageboy in Frameworks */ = {isa = PBXBuildFile; productRef = E0408C9F2BCE3C5D0086D1C6 /* Pageboy */; };
 		E0408CA42BCE3DF70086D1C6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408CA32BCE3DF70086D1C6 /* SettingsViewController.swift */; };
+		E059BDA32CB4DEE4000350A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E059BDA22CB4DEE4000350A6 /* User.swift */; };
+		E059BDA52CB4DFE5000350A6 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E059BDA42CB4DFE5000350A6 /* LoginProvider.swift */; };
 		E0A32A1A2BCF79DB00A1D08E /* ApiNetworkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A192BCF79DB00A1D08E /* ApiNetworkable.swift */; };
 		E0A32A1C2BCF7A0A00A1D08E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A1B2BCF7A0A00A1D08E /* Router.swift */; };
 		E0A32A1E2BCF7B3400A1D08E /* Router+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A1D2BCF7B3400A1D08E /* Router+TargetType.swift */; };
@@ -49,7 +49,25 @@
 		E0A32A2B2BCFB1DC00A1D08E /* AssetPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A2A2BCFB1DC00A1D08E /* AssetPageViewController.swift */; };
 		E0A32A302BCFB34500A1D08E /* AssetViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A2E2BCFB34500A1D08E /* AssetViewerViewController.swift */; };
 		E0A32A312BCFB34500A1D08E /* AssetViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A32A2F2BCFB34500A1D08E /* AssetViewerViewController.xib */; };
+		E0C831BA2CB4F2C3005C0E74 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C831B82CB4F2C3005C0E74 /* LoginViewController.xib */; };
+		E0C831BB2CB4F2C3005C0E74 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C831B72CB4F2C3005C0E74 /* LoginViewController.swift */; };
+		E0C831BC2CB4F2C3005C0E74 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C831B92CB4F2C3005C0E74 /* LoginViewModel.swift */; };
+		E0C831BE2CB503C7005C0E74 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C831BD2CB503C7005C0E74 /* UserData.swift */; };
+		E0C831CD2CB513E4005C0E74 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E0C831CC2CB513E4005C0E74 /* RealmSwift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E0C831C92CB51399005C0E74 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E009B0ED2BCE5CFA00CB1E72 /* CollectionViewAssetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewAssetCell.swift; sourceTree = "<group>"; };
@@ -73,6 +91,8 @@
 		E0408C8F2BCE39E80086D1C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0408C922BCE39E80086D1C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0408CA32BCE3DF70086D1C6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E059BDA22CB4DEE4000350A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E059BDA42CB4DFE5000350A6 /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
 		E0A32A192BCF79DB00A1D08E /* ApiNetworkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetworkable.swift; sourceTree = "<group>"; };
 		E0A32A1B2BCF7A0A00A1D08E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E0A32A1D2BCF7B3400A1D08E /* Router+TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+TargetType.swift"; sourceTree = "<group>"; };
@@ -81,6 +101,10 @@
 		E0A32A2A2BCFB1DC00A1D08E /* AssetPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetPageViewController.swift; sourceTree = "<group>"; };
 		E0A32A2E2BCFB34500A1D08E /* AssetViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewerViewController.swift; sourceTree = "<group>"; };
 		E0A32A2F2BCFB34500A1D08E /* AssetViewerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetViewerViewController.xib; sourceTree = "<group>"; };
+		E0C831B72CB4F2C3005C0E74 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E0C831B82CB4F2C3005C0E74 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		E0C831B92CB4F2C3005C0E74 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E0C831BD2CB503C7005C0E74 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,11 +112,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0C831CD2CB513E4005C0E74 /* RealmSwift in Frameworks */,
 				E009B10E2BCE6EFC00CB1E72 /* RxMoya in Frameworks */,
-				E009B0F32BCE6B5600CB1E72 /* Alamofire in Frameworks */,
 				E0A32A262BCFAA8200A1D08E /* SDWebImageWebPCoder in Frameworks */,
 				E0A32A292BCFB1A900A1D08E /* Pageboy in Frameworks */,
-				E009B0F52BCE6B5600CB1E72 /* AlamofireDynamic in Frameworks */,
 				E009B10A2BCE6EFC00CB1E72 /* Moya in Frameworks */,
 				E009B1172BCE7B9800CB1E72 /* SwiftyJSON in Frameworks */,
 				E009B0E32BCE5B6500CB1E72 /* RWExtensionPack in Frameworks */,
@@ -115,6 +138,7 @@
 				E009B14F2BCE7FA300CB1E72 /* Protocol */,
 				E009B13E2BCE7F6800CB1E72 /* Preference.swift */,
 				E009B13D2BCE7F3800CB1E72 /* API */,
+				E0C831BF2CB505BC005C0E74 /* DataObject */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -149,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				E009B1502BCE7FC500CB1E72 /* AllAssetProvider.swift */,
+				E059BDA42CB4DFE5000350A6 /* LoginProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -158,6 +183,7 @@
 			children = (
 				E009B1572BCE821900CB1E72 /* Metadata.swift */,
 				E009B1132BCE7B6600CB1E72 /* Asset.swift */,
+				E059BDA22CB4DEE4000350A6 /* User.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -181,6 +207,7 @@
 		E0408C872BCE39E60086D1C6 /* Immich */ = {
 			isa = PBXGroup;
 			children = (
+				E0C831C22CB5075D005C0E74 /* LoginView */,
 				E009B13C2BCE7F2700CB1E72 /* DataLayer */,
 				E0A32A232BCF839C00A1D08E /* Cell */,
 				E0408C882BCE39E60086D1C6 /* AppDelegate.swift */,
@@ -222,6 +249,24 @@
 			path = AssetDetailView;
 			sourceTree = "<group>";
 		};
+		E0C831BF2CB505BC005C0E74 /* DataObject */ = {
+			isa = PBXGroup;
+			children = (
+				E0C831BD2CB503C7005C0E74 /* UserData.swift */,
+			);
+			path = DataObject;
+			sourceTree = "<group>";
+		};
+		E0C831C22CB5075D005C0E74 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				E0C831B72CB4F2C3005C0E74 /* LoginViewController.swift */,
+				E0C831B82CB4F2C3005C0E74 /* LoginViewController.xib */,
+				E0C831B92CB4F2C3005C0E74 /* LoginViewModel.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,6 +277,7 @@
 				E0408C812BCE39E60086D1C6 /* Sources */,
 				E0408C822BCE39E60086D1C6 /* Frameworks */,
 				E0408C832BCE39E60086D1C6 /* Resources */,
+				E0C831C92CB51399005C0E74 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,8 +289,6 @@
 				E0408C9C2BCE3A5C0086D1C6 /* SDWebImageMapKit */,
 				E0408C9F2BCE3C5D0086D1C6 /* Pageboy */,
 				E009B0E22BCE5B6500CB1E72 /* RWExtensionPack */,
-				E009B0F22BCE6B5600CB1E72 /* Alamofire */,
-				E009B0F42BCE6B5600CB1E72 /* AlamofireDynamic */,
 				E009B1072BCE6EFC00CB1E72 /* CombineMoya */,
 				E009B1092BCE6EFC00CB1E72 /* Moya */,
 				E009B10B2BCE6EFC00CB1E72 /* ReactiveMoya */,
@@ -252,6 +296,7 @@
 				E009B1162BCE7B9800CB1E72 /* SwiftyJSON */,
 				E0A32A252BCFAA8200A1D08E /* SDWebImageWebPCoder */,
 				E0A32A282BCFB1A900A1D08E /* Pageboy */,
+				E0C831CC2CB513E4005C0E74 /* RealmSwift */,
 			);
 			productName = Immich;
 			productReference = E0408C852BCE39E60086D1C6 /* Immich.app */;
@@ -285,10 +330,10 @@
 				E0408C992BCE3A5C0086D1C6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				E0408C9E2BCE3C5D0086D1C6 /* XCRemoteSwiftPackageReference "Pageboy" */,
 				E009B0E12BCE5B6500CB1E72 /* XCRemoteSwiftPackageReference "RWExtensionPack" */,
-				E009B0F12BCE6B5600CB1E72 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				E009B1062BCE6EFC00CB1E72 /* XCRemoteSwiftPackageReference "Moya" */,
 				E009B1152BCE7B9800CB1E72 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				E0A32A242BCFAA8100A1D08E /* XCRemoteSwiftPackageReference "SDWebImageWebPCoder" */,
+				E0C831CB2CB513E4005C0E74 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = E0408C862BCE39E60086D1C6 /* Products */;
 			projectDirPath = "";
@@ -304,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0C831BA2CB4F2C3005C0E74 /* LoginViewController.xib in Resources */,
 				E009B13F2BCE7F6800CB1E72 /* Preference.swift in Resources */,
 				E009B1382BCE7EF100CB1E72 /* ApiResponse.swift in Resources */,
 				E0A32A312BCFB34500A1D08E /* AssetViewerViewController.xib in Resources */,
@@ -331,6 +377,7 @@
 				E009B1462BCE7F8700CB1E72 /* Pageable.swift in Sources */,
 				E009B14B2BCE7F8700CB1E72 /* CellRefreshable.swift in Sources */,
 				E0A32A202BCF7B5A00A1D08E /* Environment.swift in Sources */,
+				E059BDA52CB4DFE5000350A6 /* LoginProvider.swift in Sources */,
 				E009B1582BCE821900CB1E72 /* Metadata.swift in Sources */,
 				E0A32A302BCFB34500A1D08E /* AssetViewerViewController.swift in Sources */,
 				E009B14A2BCE7F8700CB1E72 /* ManagedObjectConvertible.swift in Sources */,
@@ -339,10 +386,14 @@
 				E0408CA42BCE3DF70086D1C6 /* SettingsViewController.swift in Sources */,
 				E0A32A1E2BCF7B3400A1D08E /* Router+TargetType.swift in Sources */,
 				E0A32A222BCF7C6600A1D08E /* ParamConvertible.swift in Sources */,
+				E0C831BB2CB4F2C3005C0E74 /* LoginViewController.swift in Sources */,
+				E0C831BC2CB4F2C3005C0E74 /* LoginViewModel.swift in Sources */,
+				E0C831BE2CB503C7005C0E74 /* UserData.swift in Sources */,
 				E009B0EF2BCE5CFA00CB1E72 /* CollectionViewAssetCell.swift in Sources */,
 				E009B1492BCE7F8700CB1E72 /* Loadable.swift in Sources */,
 				E009B15A2BCE82A100CB1E72 /* Api.swift in Sources */,
 				E009B14E2BCE7F9E00CB1E72 /* JSONConvertible.swift in Sources */,
+				E059BDA32CB4DEE4000350A6 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +547,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93V8F37ZL6;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
@@ -521,6 +573,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93V8F37ZL6;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
@@ -569,14 +622,6 @@
 				kind = branch;
 			};
 		};
-		E009B0F12BCE6B5600CB1E72 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
-		};
 		E009B1062BCE6EFC00CB1E72 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya";
@@ -617,6 +662,14 @@
 				minimumVersion = 0.14.5;
 			};
 		};
+		E0C831CB2CB513E4005C0E74 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -624,16 +677,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E009B0E12BCE5B6500CB1E72 /* XCRemoteSwiftPackageReference "RWExtensionPack" */;
 			productName = RWExtensionPack;
-		};
-		E009B0F22BCE6B5600CB1E72 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E009B0F12BCE6B5600CB1E72 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		E009B0F42BCE6B5600CB1E72 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E009B0F12BCE6B5600CB1E72 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 		E009B1072BCE6EFC00CB1E72 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -684,6 +727,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E0408C9E2BCE3C5D0086D1C6 /* XCRemoteSwiftPackageReference "Pageboy" */;
 			productName = Pageboy;
+		};
+		E0C831CC2CB513E4005C0E74 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0C831CB2CB513E4005C0E74 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

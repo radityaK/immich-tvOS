@@ -16,15 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        guard let navController = window?.rootViewController as? UINavigationController else { return true }
+        
+        guard let user = UserData.getActiveUser() else {
+            // set to login page
+            let loginController = LoginViewController()
+            navController.setViewControllers([loginController], animated: true)
+            return true
+        }
+        
         let requestModifier = SDWebImageDownloaderRequestModifier { request in
             var mutableRequest = request
-            mutableRequest.setValue("JjlipfdvMPAy3DBNTFibqYwYLNStxMV1iklIbhX5E", forHTTPHeaderField: "x-api-key")
+            mutableRequest.setValue(user.accessToken, forHTTPHeaderField: "x-api-key")
             return mutableRequest
         }
         SDWebImageDownloader.shared.requestModifier = requestModifier
         // Add WebP support, do this just after launching (AppDelegate)
         SDImageCodersManager.shared.addCoder(SDImageAWebPCoder.shared)
         SDImageCodersManager.shared.addCoder(SDImageWebPCoder.shared)
+
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let tabbar = storyBoard.instantiateViewController(withIdentifier: "tabbar")
+        navController.setViewControllers([tabbar], animated: true)
         return true
     }
     

@@ -36,9 +36,9 @@ struct ApiResponse<T> where T: JSONConvertible {
     
     /**
      A variable to store metadata from network response.
-     */
+    rer */
     var metadata: Metadata?
-    
+        
     init(result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
@@ -51,6 +51,7 @@ struct ApiResponse<T> where T: JSONConvertible {
                     self.array?.append(object)
                 }
             })
+            self.data = T(json: jsonResponse)
         case .failure(let error):
             self.error = error
         }

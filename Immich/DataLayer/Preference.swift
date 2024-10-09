@@ -9,7 +9,6 @@
 import Foundation
 
 struct Preference {
-    
     static var baseUrl : String {
         get{
             return UserDefaults.standard.string(forKey: "immich_base_url") ?? ""
