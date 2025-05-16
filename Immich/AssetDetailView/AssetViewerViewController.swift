@@ -35,8 +35,7 @@ class AssetViewerViewController: UIViewController {
         self.playButton.isEnabled = true
         
         if let asset = assetItem {
-            let urlAsset = "https://photos.gardenia-cloud.my.id/api/asset/thumbnail/\(asset.id)"
-            self.imageView.sd_setImage(with: URL(string: urlAsset))
+            self.imageView.sd_setImage(with: URL(string: asset.assetUrl))
             self.imageView.isHidden = true
             if asset.type.lowercased() == "video" {
 //                self.playButton.isHidden = false
@@ -53,6 +52,7 @@ class AssetViewerViewController: UIViewController {
                 self.playButton.isHidden = true
                 self.playIndicatorImageView.isHidden = true
                 self.iconImageView.isHidden = true
+                self.imageView.isHidden = false
             }
         }
     }

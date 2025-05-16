@@ -37,12 +37,16 @@ class HomeController: UIViewController {
         viewModel.onDataLoad = { [weak self] (response) in
             self?.collectionView.reloadData()
         }
+        
+        viewModel.onAssetFetch = { [weak self] (response) in
+            self?.collectionView.reloadData()
+        }
     }
 }
 
 extension HomeController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.numberOfTimeRange
+        return self.viewModel.numberOfAsset
     }
 }
 
@@ -50,17 +54,17 @@ extension HomeController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(indexPath: indexPath) as CollectionViewAssetCell
         guard let asset = self.viewModel.getAsset(at: indexPath.row) else { return cell }
-//        cell.setupCell(asset: asset)
+        cell.setupCell(asset: asset)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let collection = self.viewModel.assetCollection else { return }
-//        let pageController = AssetPageViewController()
-//        pageController.assetCollection = collection
-//        pageController.totalPage = collection.count
-//        pageController.selectedPageIndex = indexPath.row
-//        self.navigationController?.pushViewController(pageController, animated: true)
+        guard let collection = self.viewModel.assetCollection else { return }
+        let pageController = AssetPageViewController()
+        pageController.assetCollection = collection
+        pageController.totalPage = collection.count
+        pageController.selectedPageIndex = indexPath.row
+        self.navigationController?.pushViewController(pageController, animated: true)
     }
 }
 

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let requestModifier = SDWebImageDownloaderRequestModifier { request in
             var mutableRequest = request
-            mutableRequest.setValue(user.accessToken, forHTTPHeaderField: "x-api-key")
+            mutableRequest.setValue("Bearer \(user.accessToken)", forHTTPHeaderField: "Authorization")
             return mutableRequest
         }
         SDWebImageDownloader.shared.requestModifier = requestModifier

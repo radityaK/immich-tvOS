@@ -10,12 +10,15 @@ import SwiftyJSON
 
 class HomeViewModel: NSObject {
     var onDataLoad: ((ApiResponse<TimeRange>) -> Void)?
+    var onAssetFetch: ((ApiResponse<Asset>) -> Void)?
     var timeRangeCollection: [TimeRange]?
     var numberOfTimeRange = 0
     var provider: TimeBucketsProvider?
+    var numberOfAsset = 0
+    var assetCollection: [Asset]?
     
-    func getAsset(at: Int) -> TimeRange? {
-        return self.timeRangeCollection?[exist: at]
+    func getAsset(at: Int) -> Asset? {
+        return self.assetCollection?[exist: at]
     }
 }
 
@@ -33,6 +36,23 @@ extension HomeViewModel: Loadable {
             
             if let array = response.array {
                 self?.numberOfTimeRange = array.count
+                self?.fetchAssetForSpecific(range: array.first?.timeBucket ?? "")
+            }
+        }
+    }
+    
+    func fetchAssetForSpecific(range: String) {
+        let provider = SpecificTimeBucket(size: "MONTH", timeBucket: range)
+        Api.shared.request(endpoint: .allAsset(provider: provider)) { [weak self] (response: ApiResponse<Asset>) in
+            if let _ = response.error {
+                if let callback = self?.onAssetFetch { callback(response) }
+                return
+            }
+            
+            if let array = response.array, let callback = self?.onAssetFetch {
+                self?.numberOfAsset = array.count
+                self?.assetCollection = array
+                callback(response)
             }
         }
     }

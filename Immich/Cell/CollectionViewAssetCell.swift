@@ -25,8 +25,7 @@ class CollectionViewAssetCell: UICollectionViewCell, Reusable {
             self.iconImageView.isHidden = true
         }
     
-        let urlAsset = "https://photos.gardenia-cloud.my.id/api/asset/thumbnail/\(asset.id)"
-        self.assetImageView.sd_setImage(with: URL(string: urlAsset), placeholderImage: UIImage(named: "placeholder"), context: [:])
+        self.assetImageView.sd_setImage(with: URL(string: asset.assetUrl), placeholderImage: UIImage(named: "placeholder"), context: [:])
     }
 }
 

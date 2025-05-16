@@ -34,18 +34,6 @@ extension Router: TargetType {
             }
             UserDefaults.standard.set(serverURL,forKey: "immich_base_url")
             return url
-//        case .allAsset:
-//            guard let serverURL = UserData.getActiveUser()?.server as? String,
-//                    let url = URL(string: serverURL) else {
-//                return URL(string: "about:blank")!
-//            }
-//            return url
-//        case .allAlbum:
-//            guard let serverURL = UserData.getActiveUser()?.server as? String,
-//                    let url = URL(string: serverURL) else {
-//                return URL(string: "about:blank")!
-//            }
-//            return url
         default:
             guard let serverURL = UserData.getActiveUser()?.server as? String,
                     let url = URL(string: serverURL) else {
@@ -61,7 +49,7 @@ extension Router: TargetType {
     var path: String {
         switch self {
         case .allAlbum: return "/albums"
-        case .allAsset(let provider): return "/assets/device/37db6905-7035-4e91-a1b6-4ccafaaab29f"
+        case .allAsset(let provider): return "/timeline/bucket"
         case .login: return "/auth/login"
         case .timeBuckets: return "/timeline/buckets"
         }
@@ -154,6 +142,8 @@ extension Router: TargetType {
         case .allAlbum(let provider):
             return provider.parameters
         case .timeBuckets(let provider):
+            return provider.parameters
+        case .allAsset(let provider):
             return provider.parameters
         default:
             return [:]

@@ -15,3 +15,12 @@ struct TimeBucketsProvider: ParamConvertible {
         ]
     }
 }
+
+struct SpecificTimeBucket: ParamConvertible {
+    var size: String
+    var timeBucket: String
+    
+    var parameters: [String : Any] {
+        return Converter.toParameters(param: self)
+    }
+}
