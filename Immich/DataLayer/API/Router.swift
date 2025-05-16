@@ -12,5 +12,7 @@ import Foundation
  */
 enum Router {
     case allAsset(provider: ParamConvertible)
+    case allAlbum(provider: ParamConvertible)
     case login(provider: ParamConvertible)
+    case timeBuckets(provider: ParamConvertible)
 }

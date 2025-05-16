@@ -42,7 +42,6 @@ struct ApiResponse<T> where T: JSONConvertible {
     init(result: Result<Response, MoyaError>) {
         switch result {
         case .success(let response):
-            guard let url = response.request?.url else { return }
             self.statusCode = response.statusCode
             guard let jsonResponse = try? JSON(data: response.data) else { return }
             // Process Array
@@ -51,6 +50,7 @@ struct ApiResponse<T> where T: JSONConvertible {
                     self.array?.append(object)
                 }
             })
+            print("response \(jsonResponse)")
             self.data = T(json: jsonResponse)
         case .failure(let error):
             self.error = error

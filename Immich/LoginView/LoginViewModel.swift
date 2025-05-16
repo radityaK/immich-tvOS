@@ -21,9 +21,12 @@ extension LoginViewModel: Loadable {
                 if let callback = self?.onDataLoad { callback(response) }
                 return
             }
+            
             if let user = response.data {
                 user.toDataObject()
             }
+            
+            if let callback = self?.onDataLoad { callback(response) }
         }
     }
 }

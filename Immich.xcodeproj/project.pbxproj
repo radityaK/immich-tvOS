@@ -39,6 +39,10 @@
 		E0408CA42BCE3DF70086D1C6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408CA32BCE3DF70086D1C6 /* SettingsViewController.swift */; };
 		E059BDA32CB4DEE4000350A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E059BDA22CB4DEE4000350A6 /* User.swift */; };
 		E059BDA52CB4DFE5000350A6 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E059BDA42CB4DFE5000350A6 /* LoginProvider.swift */; };
+		E0927C222DD6E1EB00127333 /* AllAlbumsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0927C212DD6E1E100127333 /* AllAlbumsProvider.swift */; };
+		E0927C282DD6F31C00127333 /* TimeRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0927C272DD6F31C00127333 /* TimeRange.swift */; };
+		E0927C2A2DD6F3CA00127333 /* TimeRangeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0927C292DD6F3CA00127333 /* TimeRangeData.swift */; };
+		E0927C2C2DD70B6D00127333 /* TimeBucketsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0927C2B2DD70B6D00127333 /* TimeBucketsProvider.swift */; };
 		E0A32A1A2BCF79DB00A1D08E /* ApiNetworkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A192BCF79DB00A1D08E /* ApiNetworkable.swift */; };
 		E0A32A1C2BCF7A0A00A1D08E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A1B2BCF7A0A00A1D08E /* Router.swift */; };
 		E0A32A1E2BCF7B3400A1D08E /* Router+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A32A1D2BCF7B3400A1D08E /* Router+TargetType.swift */; };
@@ -93,6 +97,10 @@
 		E0408CA32BCE3DF70086D1C6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E059BDA22CB4DEE4000350A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E059BDA42CB4DFE5000350A6 /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
+		E0927C212DD6E1E100127333 /* AllAlbumsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAlbumsProvider.swift; sourceTree = "<group>"; };
+		E0927C272DD6F31C00127333 /* TimeRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRange.swift; sourceTree = "<group>"; };
+		E0927C292DD6F3CA00127333 /* TimeRangeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeData.swift; sourceTree = "<group>"; };
+		E0927C2B2DD70B6D00127333 /* TimeBucketsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBucketsProvider.swift; sourceTree = "<group>"; };
 		E0A32A192BCF79DB00A1D08E /* ApiNetworkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetworkable.swift; sourceTree = "<group>"; };
 		E0A32A1B2BCF7A0A00A1D08E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		E0A32A1D2BCF7B3400A1D08E /* Router+TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+TargetType.swift"; sourceTree = "<group>"; };
@@ -173,7 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				E009B1502BCE7FC500CB1E72 /* AllAssetProvider.swift */,
+				E0927C212DD6E1E100127333 /* AllAlbumsProvider.swift */,
 				E059BDA42CB4DFE5000350A6 /* LoginProvider.swift */,
+				E0927C2B2DD70B6D00127333 /* TimeBucketsProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -184,6 +194,7 @@
 				E009B1572BCE821900CB1E72 /* Metadata.swift */,
 				E009B1132BCE7B6600CB1E72 /* Asset.swift */,
 				E059BDA22CB4DEE4000350A6 /* User.swift */,
+				E0927C272DD6F31C00127333 /* TimeRange.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -253,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				E0C831BD2CB503C7005C0E74 /* UserData.swift */,
+				E0927C292DD6F3CA00127333 /* TimeRangeData.swift */,
 			);
 			path = DataObject;
 			sourceTree = "<group>";
@@ -378,6 +390,7 @@
 				E009B14B2BCE7F8700CB1E72 /* CellRefreshable.swift in Sources */,
 				E0A32A202BCF7B5A00A1D08E /* Environment.swift in Sources */,
 				E059BDA52CB4DFE5000350A6 /* LoginProvider.swift in Sources */,
+				E0927C282DD6F31C00127333 /* TimeRange.swift in Sources */,
 				E009B1582BCE821900CB1E72 /* Metadata.swift in Sources */,
 				E0A32A302BCFB34500A1D08E /* AssetViewerViewController.swift in Sources */,
 				E009B14A2BCE7F8700CB1E72 /* ManagedObjectConvertible.swift in Sources */,
@@ -389,9 +402,12 @@
 				E0C831BB2CB4F2C3005C0E74 /* LoginViewController.swift in Sources */,
 				E0C831BC2CB4F2C3005C0E74 /* LoginViewModel.swift in Sources */,
 				E0C831BE2CB503C7005C0E74 /* UserData.swift in Sources */,
+				E0927C2A2DD6F3CA00127333 /* TimeRangeData.swift in Sources */,
+				E0927C222DD6E1EB00127333 /* AllAlbumsProvider.swift in Sources */,
 				E009B0EF2BCE5CFA00CB1E72 /* CollectionViewAssetCell.swift in Sources */,
 				E009B1492BCE7F8700CB1E72 /* Loadable.swift in Sources */,
 				E009B15A2BCE82A100CB1E72 /* Api.swift in Sources */,
+				E0927C2C2DD70B6D00127333 /* TimeBucketsProvider.swift in Sources */,
 				E009B14E2BCE7F9E00CB1E72 /* JSONConvertible.swift in Sources */,
 				E059BDA32CB4DEE4000350A6 /* User.swift in Sources */,
 			);

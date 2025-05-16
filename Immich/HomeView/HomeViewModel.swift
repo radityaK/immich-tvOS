@@ -9,36 +9,31 @@ import Foundation
 import SwiftyJSON
 
 class HomeViewModel: NSObject {
-    var provider: AllAssetProvider?
-    var onDataLoad: ((ApiResponse<Asset>) -> Void)?
-    var assetCollection: [Asset]?
-    var numberOfAsset = 0
+    var onDataLoad: ((ApiResponse<TimeRange>) -> Void)?
+    var timeRangeCollection: [TimeRange]?
+    var numberOfTimeRange = 0
+    var provider: TimeBucketsProvider?
     
-    func getAsset(at: Int) -> Asset? {
-        return self.assetCollection?[exist: at]
+    func getAsset(at: Int) -> TimeRange? {
+        return self.timeRangeCollection?[exist: at]
     }
 }
 
 extension HomeViewModel: Loadable {
-    typealias Response = ApiResponse<Asset>
+    typealias Response = ApiResponse<TimeRange>
     
     func fetch() {
-        guard let user = UserData.getActiveUser() else { return }
-        provider = AllAssetProvider(userId: user.userId)
+        provider = TimeBucketsProvider()
         guard let param = provider else { return }
-        Api.shared.request(endpoint: .allAsset(provider: param)) { [weak self] (response : ApiResponse<Asset>) in
+        Api.shared.request(endpoint: .timeBuckets(provider: param)) { [weak self] (response : ApiResponse<TimeRange>) in
             if let _ = response.error {
                 if let callback = self?.onDataLoad { callback(response) }
                 return
             }
             
             if let array = response.array {
-                self?.numberOfAsset = array.count
-                self?.assetCollection = array
-                if let callback = self?.onDataLoad { callback(response) }
-                return
+                self?.numberOfTimeRange = array.count
             }
-            print("data \(response.array)")
         }
     }
 }

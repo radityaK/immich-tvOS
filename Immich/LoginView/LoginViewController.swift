@@ -16,6 +16,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.emailField.text = "raditya.kurnianto@gmail.com"
+        self.passwordField.text = "kania1234"
+        self.serverField.text = "https://photos.gardenia-cloud.my.id/api"
+        
+        viewModel.onDataLoad = { [weak self] (user) in
+            let controller = HomeController()
+            self?.navigationController?.setViewControllers([controller], animated: true)
+        }
     }
 
     @IBAction func loginAction(_ sender: Any) {

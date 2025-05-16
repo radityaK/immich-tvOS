@@ -34,14 +34,25 @@ extension Router: TargetType {
             }
             UserDefaults.standard.set(serverURL,forKey: "immich_base_url")
             return url
-        case .allAsset:
+//        case .allAsset:
+//            guard let serverURL = UserData.getActiveUser()?.server as? String,
+//                    let url = URL(string: serverURL) else {
+//                return URL(string: "about:blank")!
+//            }
+//            return url
+//        case .allAlbum:
+//            guard let serverURL = UserData.getActiveUser()?.server as? String,
+//                    let url = URL(string: serverURL) else {
+//                return URL(string: "about:blank")!
+//            }
+//            return url
+        default:
             guard let serverURL = UserData.getActiveUser()?.server as? String,
                     let url = URL(string: serverURL) else {
                 return URL(string: "about:blank")!
             }
             return url
         }
-        return URL(string: "about:blank")!
     }
     
     /**
@@ -49,8 +60,10 @@ extension Router: TargetType {
      */
     var path: String {
         switch self {
-        case .allAsset: return "/assets/\(UserData.getActiveUser()!.userId)/thumbnail"
+        case .allAlbum: return "/albums"
+        case .allAsset(let provider): return "/assets/device/37db6905-7035-4e91-a1b6-4ccafaaab29f"
         case .login: return "/auth/login"
+        case .timeBuckets: return "/timeline/buckets"
         }
     }
     
@@ -89,11 +102,10 @@ extension Router: TargetType {
      */
     var headers: [String : String]? {
         switch self {
+        case .allAlbum:
+            return ["Accept": "application/json"]
         case .allAsset:
-            return [
-                //"Authorization": "Bearer \(UserData.getActiveUser()?.accessToken ?? "")",
-                "Accept": "application/octet-stream"
-            ]
+            return ["Accept": "application/json"]
         default:
             return ["User-Agent": userAgent, "Authorization":auth]
         }
@@ -112,7 +124,7 @@ extension Router: TargetType {
      Basic auth for each network request.
      */
     var auth: String {
-        return "Basic \(Data("cnbcindonesia:cnbc1nd0n3s14".utf8).base64EncodedString())"
+        return "Basic \(Data("asdasd:1231asdadwe".utf8).base64EncodedString())"
     }
     
     /**
@@ -121,7 +133,7 @@ extension Router: TargetType {
     var encoding: ParameterEncoding {
         switch self {
         // encoding for HTTP Post Method
-        case .login
+        case .login, .allAsset
             : return URLEncoding.default
         // encoding for HTTP Delete Method with body param
 //        case .unregisterPush,.getRekomendasiBoxBD,.getRekomendasiIndex,.getRekomendasiDetail:
@@ -139,8 +151,11 @@ extension Router: TargetType {
         switch self {
         case .login(provider: let provider):
             return provider.parameters
-        case .allAsset(let provider):
-//            return provider.parameters
+        case .allAlbum(let provider):
+            return provider.parameters
+        case .timeBuckets(let provider):
+            return provider.parameters
+        default:
             return [:]
         }
     }
